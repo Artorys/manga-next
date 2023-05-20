@@ -1,3 +1,6 @@
+import Button from "../Button";
+import style from "./style.module.css"
+
 export default function Navbar(){
     return (
         <header>
@@ -5,12 +8,13 @@ export default function Navbar(){
 
             </div>
             <nav>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                <ul className={style.navbar__list}>
+                    <li>
+                        <Button text="Log in"></Button>
+                    </li>
+                    <li>
+                        <Button text="Sign Up"></Button>
+                    </li>
                 </ul>
             </nav>
         </header>

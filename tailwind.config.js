@@ -23,7 +23,10 @@ module.exports = {
       },
       colors: {
         pink : "#E40066",
-        blue : "#03CEA4",
+        blue : {
+          100 : "#1B6FA8",
+          200 : "#03CEA4"
+        },
         yellow : "#F4B333",
         purple : "#9747FF"
       },

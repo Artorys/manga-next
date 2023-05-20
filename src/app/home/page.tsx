@@ -1,7 +1,9 @@
+import Navbar from "@/components/NavBar";
+import style from "./style.module.css";
+
 export default function HomePage(){
+
     return (
-        <div>
-            <p>Salve</p>
-        </div>
+        <></>
     )
 }

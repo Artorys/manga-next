@@ -1,7 +1,10 @@
-import "./style.css"
+import Navbar from "@/components/NavBar";
+import style from "./style.module.css";
 
 export default function HomeLayout({children} : {children : React.ReactNode}){
     return(
-        <section className="font-700 text-2xl">{children}</section>
+        <>
+            <Navbar></Navbar>
+        </>
     )
 }
