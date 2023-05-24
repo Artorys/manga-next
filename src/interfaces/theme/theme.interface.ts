@@ -1,4 +1,5 @@
 import { IButtonVariant } from "./variants/buttonVariant.interface"
+import { IInputVariant } from "./variants/inputVariant.interface"
 
 export interface IVariant{
     baseStyle?: {
@@ -14,7 +15,8 @@ export interface IVariant{
 }
 export interface ITheme{
     components : {
-        Button : IButtonVariant
+        Button : IButtonVariant,
+        Input : IInputVariant
     },
     colors : {
         brand: 

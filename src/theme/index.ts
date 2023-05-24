@@ -1,11 +1,13 @@
 import { ChakraTheme, extendTheme } from "@chakra-ui/react"
 import buttonVariant from "./variants/Button"
 import { ITheme } from "@/interfaces/theme/theme.interface"
+import inputVariant from "./variants/Input"
 
 
 export const customTheme : ITheme = {
     components : {
-        Button : buttonVariant
+        Button : buttonVariant,
+        Input : inputVariant
     },
     breakpoints : {
         phone : "330px",
@@ -33,7 +35,7 @@ export const customTheme : ITheme = {
         lato : "var(--font-lato)"
     },
     fontSizes : {
-        mangaBackground : {
+        mangaCarousel : {
             title: "2.25rem",
             description : "0.75rem",
             button : "0.875rem",

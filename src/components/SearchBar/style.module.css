@@ -1,0 +1,5 @@
+.icon:hover{
+    fill : "#1B6FA8";
+    opacity: 0.5;
+    transition: 0.5s;
+}
