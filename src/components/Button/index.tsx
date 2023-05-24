@@ -1,3 +1,5 @@
+"use client"
+
 import {Button as ButtonChakra} from "@chakra-ui/react"
 interface IButtonProps{
     text : string

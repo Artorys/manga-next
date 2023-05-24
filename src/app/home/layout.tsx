@@ -1,12 +1,15 @@
-"use client"
-
+import Carousel from "@/components/Carousel";
 import Navbar from "@/components/NavBar";
-import style from "./style.module.css";
 
 export default function HomeLayout({children} : {children : React.ReactNode}){
     return(
         <>
+        <header>
             <Navbar></Navbar>
+        </header>
+        <main>
+            {children}
+        </main>
         </>
     )
 }

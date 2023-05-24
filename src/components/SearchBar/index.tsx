@@ -1,3 +1,5 @@
+"use client"
+
 import { Box, Divider, Flex, Input, InputGroup, InputLeftElement, InputRightElement } from "@chakra-ui/react";
 import {FcSearch} from "react-icons/fc"
 import style from "./style.module.css"
