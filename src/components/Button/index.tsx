@@ -1,8 +1,10 @@
+import {Button as ButtonChakra} from "@chakra-ui/react"
 interface IButtonProps{
     text : string
+    variant : buttonVariantType
 }
 export default function Button(props : IButtonProps){
     return (
-        <button className="rounded-none p-2 bg-blue-100">{props.text}</button>
+        <ButtonChakra variant={props.variant}>{props.text}</ButtonChakra>
     )
 }
