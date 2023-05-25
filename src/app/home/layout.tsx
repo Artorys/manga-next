@@ -1,4 +1,3 @@
-import Carousel from "@/components/Carousel";
 import Navbar from "@/components/NavBar";
 
 export default function HomeLayout({children} : {children : React.ReactNode}){

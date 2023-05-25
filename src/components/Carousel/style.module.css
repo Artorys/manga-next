@@ -1,6 +1,7 @@
 .carousel{
     position: relative;
     max-width : 1136px;
+    box-shadow: 1px 1px 5px 1px black;
     width: 78.89vw;
     height: 272px;
     border: solid 1px transparent;

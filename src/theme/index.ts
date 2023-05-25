@@ -1,4 +1,4 @@
-import { ChakraTheme, extendTheme } from "@chakra-ui/react"
+import {extendTheme } from "@chakra-ui/react"
 import buttonVariant from "./variants/Button"
 import { ITheme } from "@/interfaces/theme/theme.interface"
 import inputVariant from "./variants/Input"
@@ -7,7 +7,7 @@ import inputVariant from "./variants/Input"
 export const customTheme : ITheme = {
     components : {
         Button : buttonVariant,
-        Input : inputVariant
+        Input : inputVariant,
     },
     breakpoints : {
         phone : "330px",
@@ -54,6 +54,7 @@ export const customTheme : ITheme = {
         },
         mangaCategories : "0.688rem",
         logo : "2.5rem",
+        titleSections : "1.25rem"
 
     },
     fontWeights : {
@@ -76,6 +77,7 @@ export const customTheme : ITheme = {
         },
         mangaCategories : 600,
         logo : 900,
+        titleSections : 700
     }
 
 }

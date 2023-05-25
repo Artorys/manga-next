@@ -1,0 +1,10 @@
+.categories{
+    position: relative;
+    max-width : 1136px;
+    box-shadow: 1px 1px 5px 1px #F4B333;
+    width: 78.89vw;
+    height: auto;
+    border: solid 1px transparent;
+    border-radius: 20px;
+    overflow: scroll;
+}
