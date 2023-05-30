@@ -20,6 +20,11 @@ const buttonVariant: IButtonVariant = {
       width : "auto",
       height : "32px"
     },
+    "cardButtonFlag" : {
+      width : "auto",
+      height : "12px",
+      padding: " 0.2rem",
+    },
     "carouselButtonChapter":
     {
       padding: " 0 0.25rem",
@@ -68,6 +73,13 @@ const buttonVariant: IButtonVariant = {
       fontWeight : "600",
       fontSize : "0.75rem",
       letterSpacing : '0.1rem',
+      backgroundColor: "#FAFCFC",
+      color : "#1F1F1F"
+    },
+    "cardButtonFlag":{
+      fontWeight : "500",
+      fontSize : "0.5rem",
+      letterSpacing : '0.2rem',
       backgroundColor: "#FAFCFC",
       color : "#1F1F1F"
     }

@@ -1,6 +1,7 @@
 import { lato } from '../../public/fonts'
 import './globals.css'
 import 'semantic-ui-css/semantic.min.css'
+import "react-multi-carousel/lib/styles.css";
 
 import { Providers } from './providers'
 

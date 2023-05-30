@@ -1,0 +1,21 @@
+.carouselCards{
+    position: relative;
+    width: 75vw;
+    border: solid 1px transparent;
+    border-radius: 20px;
+    overflow: hidden;
+    border: solid 1px var(--chakra-colors-greyScale-grey0);
+}
+.carouselResponsive{
+    width: 100%;
+}
+.item_slider{
+    width: auto;
+    height: auto;
+}
+@media (min-width: 600px) {
+    .carouselCards{
+        width: 80vw;
+    }
+    
+}

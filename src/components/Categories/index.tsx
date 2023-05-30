@@ -8,8 +8,8 @@ import Button from "../Button";
 
 export default function Categories(){
     return (
-        <Flex width={"100%"} maxWidth={"100%"} height={"100%"} justifyContent={"flex-end"}>
-            <Box marginX={"2rem"} width={"auto"} height={"auto"}>
+        <Flex marginX={"1rem"} as={"section"} marginBottom={"1rem"} width={"100%"} maxWidth={"1136px"} height={"100%"}>
+            <Box width={"100%"} height={"auto"}>
                 <Flex gap={"0.25rem"} marginY={"1rem"} display={"flex"} alignItems={"center"}>
                     <Flex alignItems={"center"} gap={"0.25rem"}>
                         <Text margin={0} fontWeight={"titleSections"} fontSize={"titleSections"} color={"brand.brand1"}>Hot</Text>

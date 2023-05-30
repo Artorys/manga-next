@@ -5,7 +5,7 @@ import { ReactElement } from "react"
 interface IButtonProps{
     text : string
     variant : buttonVariantType
-    size : buttonSizesType
+    size? : buttonSizesType
     letterSpacing? : string
     leftIcon? : ReactElement;
 }

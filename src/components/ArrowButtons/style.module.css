@@ -1,0 +1,17 @@
+.arrow{
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: solid 1px var(--chakra-colors-greyScale-grey0);
+    background-color: var(--chakra-colors-brand-brand4);
+    border-radius: 100%;
+
+}
+.arrow_icon{
+    fill : var(--chakra-colors-greyScale-whiteFixed);
+}
+.inactive{
+    cursor: not-allowed;
+    background-color: var(--chakra-colors-brand-brand4);
+    opacity: 0.5;
+}

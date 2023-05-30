@@ -1,13 +1,16 @@
 import Categories from "@/components/Categories";
 import style from "./style.module.css";
-import Carousel from "@/components/Carousel";
+import CarouselBanner from "@/components/CarouselBanner";
+import { CarouselCards } from "@/components/CarouselCards";
+
 
 export default function HomePage(){
 
     return (
         <>
-            <Carousel></Carousel>
+            <CarouselBanner></CarouselBanner>
             <Categories></Categories>
+            <CarouselCards></CarouselCards>
         </>
     )
 }
