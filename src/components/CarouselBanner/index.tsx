@@ -26,7 +26,7 @@ export default function CarouselBanner(){
 
     return (
         <Flex marginX={"1rem"} as={"section"} width={"100%"} maxWidth={"1136px"} height={"100%"}>
-            <Flex width={"100%"} height={"100%"}>
+            <Flex justifyContent={"flex-start"} width={"100%"} height={"100%"}>
               <Box className={style.carousel__box}>
                 <Flex marginY={"1rem"} alignItems={"center"}>
                     <Flex gap={"0.25rem"}>
@@ -35,7 +35,7 @@ export default function CarouselBanner(){
                     </Flex>
                     <GiPartyPopper fill="#E40066"></GiPartyPopper>
                 </Flex>
-                <Carousel customButtonGroup={<CarouselButtonGroup></CarouselButtonGroup>} customLeftArrow={<ArrowLeftButton></ArrowLeftButton>} customRightArrow={<ArrowRightButton></ArrowRightButton>} containerClass={style.carousel__banner} className={style.carousel__banner} itemClass={style.carousel__item} responsive={responsive}>
+                <Carousel customButtonGroup={<CarouselButtonGroup></CarouselButtonGroup>} customLeftArrow={<ArrowLeftButton></ArrowLeftButton>} customRightArrow={<ArrowRightButton></ArrowRightButton>} containerClass={style.carousel__banner} itemClass={style.carousel__item} responsive={responsive}>
                     <Banner></Banner> 
                     <Banner></Banner>
                     <Banner></Banner>

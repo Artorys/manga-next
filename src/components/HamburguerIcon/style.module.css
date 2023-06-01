@@ -1,0 +1,6 @@
+.icon{
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    fill : var(--chakra-colors-greyScale-grey0)
+}

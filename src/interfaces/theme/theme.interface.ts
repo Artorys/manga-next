@@ -64,9 +64,10 @@ export interface ITheme{
         }
       },
     breakpoints : {
+        default : string
         phone : string
         tabletSmall : string
-        tabletLarge : string,
+        tabletLarge : string
         desktopSmall : string
         desktopLarge : string
     }

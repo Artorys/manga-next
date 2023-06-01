@@ -1,20 +1,16 @@
 .carousel__box{
-    position: relative;
-    max-width: 1136px;
-    width: 70vw;
+    position: relative; 
+    width: 100%;
     height: 100%;
     border-radius: 20px;
 }
-.carousel__banner{
+.carousel__banner{      
+    width: 100%;
+    height: 100%;
     position: unset;    
 }
 .carousel__item{
     width: 100%;
     height: 100%;
 }
-@media (min-width: 1024px) {
-    .carousel__box{
-        width: 80vw;
-    }
-    
-}
+

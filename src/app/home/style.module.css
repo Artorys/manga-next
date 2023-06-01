@@ -5,24 +5,27 @@
 }
 
 .main{
-    width: auto;
+    box-sizing: border-box;
+    width: 100%;
     height: 100%;
 }
 .aside{
-    position: absolute;
-    z-index: 2;
+    display: none;
     background-color: var(--chakra-colors-brand-brand4);
-    width :100%;
-    height: 100%;
 }
 @media (min-width: 480px) {
+
+    .main{
+        width: 80%;
+    }
 
     .container{
         display: flex;
     }
     
     .aside{
-        width: max(20vw,240px);
+        display: block;
+        width: 20%;
         position: relative;
         height: auto;
     }

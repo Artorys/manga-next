@@ -8,7 +8,7 @@ import Flags from "../Flags";
 
 export default function Banner(){
     return(
-            <Box className={style.carousel} paddingLeft={"6.563rem"}>
+            <Box className={style.carousel} paddingLeft={{default: "0px",desktopSmall : "6.563rem"}}>
                 <Flex width={"100%"} height={"100%"}>
                     <Image className={style.carousel__image} alt="Manga images" src={one_piece}></Image>
                     <Flex gap={'0.75rem'} paddingTop={"1.875rem"} width={"50%"} flexDirection={"column"} position={"relative"} zIndex={1}>

@@ -2,13 +2,6 @@
     position: relative;
     max-width : 1136px;
     border: solid 1px var(--chakra-colors-greyScale-grey0);
-    width: 70vw;
     border-radius: 20px;
     overflow: scroll;
-}
-@media (min-width: 1024px) {
-    .categories{
-        width: 80vw;
-    }
-    
 }

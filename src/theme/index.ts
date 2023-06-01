@@ -10,6 +10,7 @@ export const customTheme : ITheme = {
         Input : inputVariant,
     },
     breakpoints : {
+        default : "0px",
         phone : "330px",
         tabletSmall : "480px",
         tabletLarge : "600px",
