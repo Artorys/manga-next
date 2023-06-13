@@ -25,6 +25,7 @@ export default function Navbar(){
             </Box>
             <Flex as= {"nav"} gap={"1.25rem"}>
                 <Flex as={"ul"} gap={"1.25rem"}>
+                    <SearchBar></SearchBar>
                     {
                         isLargerThan480 ? 
                         <>

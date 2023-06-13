@@ -42,7 +42,7 @@ export function CarouselCards(){
       };
       
     return (
-        <Flex as={"section"} width={"97%"} height={"100%"}>
+        <Flex as={"section"} width={"auto"} height={"100%"}>
                 <Flex paddingLeft={"1rem"} flexDirection={"column"} borderRadius={"4px"} borderBottomRadius={"0px"} bg={"greyScale.grey0"} width={"100%"} height={"auto"}>
                         <Flex width={"100%"} height={"100%"}>
                             <Box width={"100%"} height={"100%"}>

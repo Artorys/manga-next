@@ -1,11 +1,14 @@
 "use client"
 
-import { Box, Divider, Flex, Input, InputGroup, InputLeftElement, InputRightElement } from "@chakra-ui/react";
+import { Box, Divider, Flex, Input, InputGroup, InputLeftElement, InputRightElement, useMediaQuery } from "@chakra-ui/react";
 import {FcSearch} from "react-icons/fc"
 import style from "./style.module.css"
 import {AiFillFilter} from "react-icons/ai"
 export function SearchBar(){
+    const [isLargerThan800] = useMediaQuery('(min-width: 800px)')
+    
     return(
+        isLargerThan800 ? 
         <Box borderRadius={"25px"} border={"solid 1px black"}>
             <InputGroup>
                 <InputLeftElement>
@@ -19,6 +22,7 @@ export function SearchBar(){
                     </Box>
                 </InputRightElement>
             </InputGroup>
-        </Box>
+        </Box> : 
+        <></>
     )
 }

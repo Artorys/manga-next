@@ -1,32 +1,16 @@
 "use client"
-import { useDisclosure, Drawer,Text, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, DrawerFooter, Flex, useMediaQuery } from "@chakra-ui/react"
-import React, { useEffect } from "react"
-import { HamburgerIcon } from "../HamburguerIcon"
-import {FaCompass,FaDonate} from "react-icons/fa"
-import {BsFillPeopleFill} from "react-icons/bs"
-import {IoMdNotifications} from "react-icons/io"
-import {CgProfile} from "react-icons/cg"
-import {CgUserList} from "react-icons/cg"
-import {IoMdSettings} from "react-icons/io"
+import { Flex,Text } from "@chakra-ui/react";
+import { BsFillPeopleFill } from "react-icons/bs";
+import { CgProfile, CgUserList } from "react-icons/cg";
+import { FaCompass, FaDonate } from "react-icons/fa";
+import { IoMdNotifications, IoMdSettings } from "react-icons/io";
 
-export function SideBar(){
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = React.useRef(null)
 
-  return (
-    <>
-      <HamburgerIcon ref={btnRef} onClick={()=> onOpen()}></HamburgerIcon>
-      <Drawer
-        isOpen={isOpen}
-        placement='left'
-        onClose={onClose}
-        finalFocusRef={btnRef}
-        size={`xs`}
-      >
-        <DrawerOverlay/>
-        <DrawerContent paddingLeft={`1.9375rem`} paddingTop={`6rem`} backgroundColor={`brand.brand4`}>
-          <DrawerCloseButton color={`greyScale.whiteFixed`}/>
-          <DrawerBody>
+export function Aside(){
+    return (
+        <Flex>
+        <Flex paddingLeft={{tabletLarge : "1.9375rem",default : "0.5rem"}} paddingRight={"0.5rem"}  paddingTop={`6rem`}>
+          <Flex>
             <Flex flexDirection={`column`} gap={"2.5rem"}>
               <Flex flexDirection={`column`} gap={"1rem"}>
                 <Text letterSpacing={`1px`} color={"greyScale.grey10"} fontWeight={`menuBar.text`} fontSize={`menuBar.text`}>
@@ -103,9 +87,8 @@ export function SideBar(){
                 </Flex>   
               </Flex>
             </Flex>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
-    </>
-  )
+          </Flex>
+        </Flex>
+      </Flex>
+    )
 }

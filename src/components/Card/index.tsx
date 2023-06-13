@@ -14,7 +14,7 @@ interface IPropsCard{
 
 export function Card(props : IPropsCard){
     return (
-        <Flex marginX={{default : "auto",tabletSmall : "0px"}} flexDirection={"column"} position={"relative"} width={"150px"} maxWidth={"150px"} height={"260px"}>
+        <Flex className={style.card} marginX={{default : "auto",tabletSmall : "0px"}} flexDirection={"column"} position={"relative"} width={"150px"} maxWidth={"150px"} height={"260px"}>
                 <Image className={style.card__image} alt="Manga cards" src={props.src}></Image>
                 <Flex gap={"0.25rem"} flexDirection={"column"} width={"100%"} paddingY={"0.25rem"} bg={"brand.brand4"} justifyContent={"center"} alignItems={"center"}>
                     <Text margin={0} color={"greyScale.whiteFixed"} fontWeight={"mangaCard.title"} fontSize={"mangaCard.title"}>One Piece</Text>

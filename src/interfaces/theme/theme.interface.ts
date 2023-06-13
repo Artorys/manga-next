@@ -67,6 +67,7 @@ export interface ITheme{
         default : string
         phone : string
         tabletSmall : string
+        tabletMedium : string
         tabletLarge : string
         desktopSmall : string
         desktopLarge : string
