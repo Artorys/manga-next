@@ -25,7 +25,7 @@ export function SideBar(){
           })
         }
       }
-    },[])
+    },[pathName])
 
 
   return (
