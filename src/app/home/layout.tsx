@@ -1,12 +1,16 @@
+"use client"
+
 import Navbar from "@/components/NavBar";
 import style from "./style.module.css"
 import { Aside } from "@/components/Aside";
+import React from "react";
 
 export default function HomeLayout({children} : {children : React.ReactNode}){
+
     return(
         <>
         <header>
-            <Navbar></Navbar>
+            <Navbar ></Navbar>
         </header>
         <div className={style.container}>
             <aside className={style.aside}>

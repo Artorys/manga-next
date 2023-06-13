@@ -1,3 +1,7 @@
-.sideBar{
-    
+.sidebar_item{
+    position: relative;
+    width: 95%;
+    height: auto;
+    padding: 0.25rem 0.50rem;
+    background-color: var(--chakra-colors-brand-brand2);
 }

@@ -1,6 +1,6 @@
 "use client"
-import { useDisclosure, Drawer,Text, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, DrawerFooter, Flex, useMediaQuery } from "@chakra-ui/react"
-import React, { useEffect } from "react"
+import { useDisclosure, Drawer,Text, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, DrawerFooter, Flex, useMediaQuery, forwardRef } from "@chakra-ui/react"
+import React, { useContext, useEffect, useState } from "react"
 import { HamburgerIcon } from "../HamburguerIcon"
 import {FaCompass,FaDonate} from "react-icons/fa"
 import {BsFillPeopleFill} from "react-icons/bs"
@@ -8,19 +8,33 @@ import {IoMdNotifications} from "react-icons/io"
 import {CgProfile} from "react-icons/cg"
 import {CgUserList} from "react-icons/cg"
 import {IoMdSettings} from "react-icons/io"
+import { usePathname } from 'next/navigation'
+import style from "./style.module.css"
+import { AsideContext } from "@/contexts/aside.context"
 
 export function SideBar(){
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = React.useRef(null)
+    const {setItemsStyle,styleItems} = useContext(AsideContext)
+    const pathName = usePathname()
+
+    useEffect(()=>{
+      for(const key in styleItems){
+        if(key === pathName){
+          setItemsStyle((old)=> {
+           return {...old,[key] : style.sidebar_item}
+          })
+        }
+      }
+    },[])
+
 
   return (
     <>
-      <HamburgerIcon ref={btnRef} onClick={()=> onOpen()}></HamburgerIcon>
+      <HamburgerIcon onClick={()=> onOpen()}></HamburgerIcon>
       <Drawer
         isOpen={isOpen}
         placement='left'
         onClose={onClose}
-        finalFocusRef={btnRef}
         size={`xs`}
       >
         <DrawerOverlay/>
@@ -32,23 +46,23 @@ export function SideBar(){
                 <Text letterSpacing={`1px`} color={"greyScale.grey10"} fontWeight={`menuBar.text`} fontSize={`menuBar.text`}>
                     Menu -
                 </Text>
-                <Flex alignItems={`center`} gap={`1rem`}>
+                <Flex className={styleItems["/home"]} alignItems={`center`} gap={`1rem`}>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                     雪
                   </Text>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.text`} fontSize={`menuBar.text`}>
                     Home
-                </Text>
+                  </Text>
                 </Flex>
-                <Flex alignItems={`center`} gap={`1rem`}>
+                <Flex className={styleItems["/discover"]}  alignItems={`center`} gap={`1rem`}>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                     <FaCompass></FaCompass>
                   </Text>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.text`} fontSize={`menuBar.text`}>
                     Discover comics
-                </Text>
+                  </Text>
                 </Flex>
-                <Flex alignItems={`center`} gap={`1rem`}>
+                <Flex className={styleItems["/authors"]}  alignItems={`center`} gap={`1rem`}>
                     <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                       <BsFillPeopleFill></BsFillPeopleFill>
                     </Text>
@@ -56,7 +70,7 @@ export function SideBar(){
                       Authors
                     </Text>
                 </Flex>
-                <Flex alignItems={`center`} gap={`1rem`}>
+                <Flex className={styleItems["/notifications"]}  alignItems={`center`} gap={`1rem`}>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                     <IoMdNotifications></IoMdNotifications>
                   </Text>
@@ -65,11 +79,11 @@ export function SideBar(){
                 </Text>
                 </Flex>
               </Flex>
-              <Flex flexDirection={`column`} gap={"1rem"}>
+              <Flex  flexDirection={`column`} gap={"1rem"}>
                 <Text letterSpacing={`1px`} color={"greyScale.grey10"} fontWeight={`menuBar.text`} fontSize={`menuBar.text`}>
                     General -
                 </Text>
-                <Flex alignItems={`center`} gap={`1rem`}>
+                <Flex className={styleItems["/profile"]} alignItems={`center`} gap={`1rem`}>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                     <CgProfile></CgProfile>
                   </Text>
@@ -77,7 +91,7 @@ export function SideBar(){
                     Profile
                 </Text>
                 </Flex>
-                <Flex alignItems={`center`} gap={`1rem`}>
+                <Flex className={styleItems["/mylist"]} alignItems={`center`} gap={`1rem`}>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                     <CgUserList></CgUserList>
                   </Text>
@@ -85,7 +99,7 @@ export function SideBar(){
                     My List
                 </Text>
                 </Flex>
-                <Flex alignItems={`center`} gap={`1rem`}>
+                <Flex className={styleItems["/settings"]} alignItems={`center`} gap={`1rem`}>
                     <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                       <IoMdSettings></IoMdSettings>
                     </Text>
@@ -93,7 +107,7 @@ export function SideBar(){
                       Settings
                     </Text>
                 </Flex>
-                <Flex alignItems={`center`} gap={`1rem`}>
+                <Flex className={styleItems["/donate"]} alignItems={`center`} gap={`1rem`}>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                     <FaDonate></FaDonate>
                   </Text>
