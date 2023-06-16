@@ -8,6 +8,11 @@ export const customTheme : ITheme = {
     components : {
         Button : buttonVariant,
         Input : inputVariant,
+        Text : {
+            baseStyle : {
+                margin : "0"
+            }
+        }
     },
     breakpoints : {
         default : "0px",

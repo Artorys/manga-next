@@ -1,3 +1,4 @@
+import { ITextVariant } from "./variants/Text.variant.interface"
 import { IButtonVariant } from "./variants/buttonVariant.interface"
 import { IInputVariant } from "./variants/inputVariant.interface"
 
@@ -8,7 +9,7 @@ export interface IVariant{
         [key : string] : {
         },
       },
-      variants: {
+      variants?: {
         [key : string]:  {   
         },
       },
@@ -16,7 +17,8 @@ export interface IVariant{
 export interface ITheme{
     components : {
         Button : IButtonVariant,
-        Input : IInputVariant
+        Input : IInputVariant,
+        Text : ITextVariant,
     },
     colors : {
         brand: 
