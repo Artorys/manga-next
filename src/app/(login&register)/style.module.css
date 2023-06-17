@@ -3,6 +3,13 @@
     width: 100%;
     height: 100%;
 }
+.header{
+    margin-bottom: 2.625rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
 .box_content{
     display: flex;
     flex-direction: column;
@@ -10,11 +17,17 @@
     width: 50%;
     height: 100%;
 }
-.header{
-    width: auto;
-    height: auto;
+.section_text{
+    margin-bottom: 2.3125rem;
+}
+.section_form{
+
+}
+.form{
+    
 }
 .box_image{
+    position: relative;
     margin: auto auto;
     width: 50%;
     height: 100%;
