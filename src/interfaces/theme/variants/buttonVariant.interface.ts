@@ -4,6 +4,7 @@ import { IVariant } from "../theme.interface";
 export interface IButtonVariant extends IVariant {
     variants : {
         [key : string]: {
+            marginTop? : string
             borderRadius? : string;
             fontWeight? : string
             letterSpacing? : string

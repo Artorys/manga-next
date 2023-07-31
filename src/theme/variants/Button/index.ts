@@ -37,9 +37,20 @@ const buttonVariant: IButtonVariant = {
       width : "auto",
       height : "32px"
     },
-    
+    "buttonSubmit":
+    {
+      padding: " 0 0.75rem",
+      width : "100%",
+      height : "32px"
+    },
   },
   variants: {
+    "submit" : {
+      marginTop : "1rem",
+      borderRadius : "5px",
+      backgroundColor: "#1B6FA8",
+      color: "#FAFCFC",
+    },
     "login": {
       backgroundColor: "#1B6FA8",
       color: "#FAFCFC",

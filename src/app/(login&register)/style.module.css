@@ -1,4 +1,4 @@
-.box_page{
+.container{
     display: flex;
     width: 100%;
     height: 100%;
@@ -14,14 +14,26 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 50%;
     height: 100%;
 }
+.main{
+    width: 75%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
 .section_text{
+    width: 100%;
+    height: 100%;
     margin-bottom: 2.3125rem;
 }
 .section_form{
-
+    width: 100%;
+    height: 100%;
 }
 .form{
     
@@ -30,5 +42,32 @@
     position: relative;
     margin: auto auto;
     width: 50%;
+    height: 100%;
+}
+.box_phone{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box_phone__content{
+    width: max-content;
+    height: max-content;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    background-color: var(--chakra-colors-greyScale-grey0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.box_phone__image{
+    z-index: -1;
+    position: absolute;
+    margin: auto auto;
+    width: 100%;
     height: 100%;
 }
