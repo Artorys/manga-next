@@ -50,6 +50,30 @@ const buttonVariant: IButtonVariant = {
       borderRadius : "5px",
       backgroundColor: "#1B6FA8",
       color: "#FAFCFC",
+      _hover : {
+        transition : "0.5s",
+        border : "solid 4px #F4B333",
+        borderRadius : "5px",
+        borderTop : 0,
+        borderLeft : 0
+      }
+      
+    },
+    "googleSubmit" : {
+      border : "solid 1px #1F1F1F80",
+      marginTop : "1rem",
+      borderRadius : "5px",
+      backgroundColor: "#FAFCFC",
+      color: "#1F1F1F80",
+      _hover : {
+        color: "#1F1F1F",
+        transition : "0.5s",
+        border : "solid 4px #F4B333",
+        borderRadius : "5px",
+        borderTop : 0,
+        borderLeft : 0
+      }
+      
     },
     "login": {
       backgroundColor: "#1B6FA8",

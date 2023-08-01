@@ -4,6 +4,7 @@ import { IVariant } from "../theme.interface";
 export interface IButtonVariant extends IVariant {
     variants : {
         [key : string]: {
+            border? : string,
             marginTop? : string
             borderRadius? : string;
             fontWeight? : string
@@ -13,7 +14,15 @@ export interface IButtonVariant extends IVariant {
             color?: string
             borderColor?: string
             _hover?: {
-                backgroundColor: string
+                color?: string,
+                transition : string,
+                backgroundColor?: string,
+                border? : string,
+                borderRadius? : string,
+                borderTop? : number,
+                borderBottom? : number,
+                borderRight? : number,
+                borderLeft? : number,
               },
           },
     }

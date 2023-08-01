@@ -2,3 +2,4 @@ type buttonVariantType = "login" | "register" | "carouselButton" | "carouselButt
 "carouselButtonChapter" | "categoriesButton" | "cardButtonFlag"
 type buttonSizesType = "carouselButton" | "carouselButtonFlag"
 | "carouselButtonChapter" | "categoriesButton" | "cardButtonFlag" | "submit"
+| "googleSubmit"

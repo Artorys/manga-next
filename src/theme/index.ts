@@ -33,7 +33,7 @@ export const customTheme : ITheme = {
         },
         greyScale : {
             grey0 : "#1F1F1F",
-            grey1 : "#1F1F1F80",
+            grey1 : "#1F1F1F80",    
             grey10 : "#FAFCFC80",
             whiteFixed : "#FAFCFC"
         }
