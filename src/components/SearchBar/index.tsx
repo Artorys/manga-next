@@ -1,11 +1,14 @@
 "use client"
 
-import { Box, Divider, Flex, Input, InputGroup, InputLeftElement, InputRightElement, useMediaQuery } from "@chakra-ui/react";
+import { Box, Divider, IconButton, Input, InputGroup, InputLeftElement, InputRightElement, useMediaQuery } from "@chakra-ui/react";
 import {FcSearch} from "react-icons/fc"
 import style from "./style.module.css"
 import {AiFillFilter} from "react-icons/ai"
+import { LabelStyled } from "./style";
+import { useState } from "react";
 export function SearchBar(){
     const [isLargerThan800] = useMediaQuery('(min-width: 800px)')
+    const [isClosed,setIsClosed] = useState(false)
     
     return(
         isLargerThan800 ? 
@@ -21,8 +24,11 @@ export function SearchBar(){
                         <AiFillFilter className={style.icon} fill="#1B6FA8"></AiFillFilter>
                     </Box>
                 </InputRightElement>
-            </InputGroup>
+            </InputGroup>   
         </Box> : 
-        <></>
+        <LabelStyled isClosed={isClosed} htmlFor="search">
+            <input onClick={()=> setIsClosed(true)} onBlur={()=> setIsClosed(false)} id="search" type="text" placeholder="Search" />
+            <FcSearch className="i"></FcSearch>
+        </LabelStyled>
     )
 }
