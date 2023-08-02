@@ -5,7 +5,7 @@ import style from "./style.module.css"
 import { Aside } from "@/components/Aside";
 import React from "react";
 
-export default function HomeLayout({children} : {children : React.ReactNode}){
+export default function DiscoverLayout({children} : {children : React.ReactNode}){
 
     return(
         <>

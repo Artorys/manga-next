@@ -1,6 +1,7 @@
 .carouselCards{
     position: relative;
     width: 100%;
+    height: auto;
     overflow: hidden;
     border: solid 1px var(--chakra-colors-greyScale-grey0);
 }

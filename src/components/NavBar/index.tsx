@@ -1,13 +1,16 @@
 "use client"
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex,Button as Butico } from "@chakra-ui/react";
 import Button from "../Button";
 import { SearchBar } from "../SearchBar";
 import { useMediaQuery } from '@chakra-ui/react'
 import { SideBar } from "../SideBar";
 import React from "react";
 import Logo from "../Logo";
+import { useRouter } from "next/navigation";
 
 export default function Navbar(){
+
+    const router = useRouter()
 
     const [isLargerThan480] = useMediaQuery('(min-width: 480px)')
     
@@ -23,10 +26,10 @@ export default function Navbar(){
                         isLargerThan480 ? 
                         <>
                             <li>
-                                <Button variant="login" text="Log in"></Button>
+                                <Button Onclick={()=> router.push("/login")} variant="login" text="Log in"></Button>
                             </li>
                             <li>    
-                                <Button variant="register" text="Sign Up"></Button>
+                                <Button Onclick={()=> router.push("/register")} variant="register" text="Sign Up"></Button>
                             </li>
                         </>
                         : 

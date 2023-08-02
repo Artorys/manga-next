@@ -4,7 +4,7 @@
 import { AsideProvider } from '@/contexts/aside.context'
 import { themeApp } from '@/theme'
 import { CacheProvider } from '@chakra-ui/next-js'
-import { CSSReset, ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 
 export function Providers({ 
     children 

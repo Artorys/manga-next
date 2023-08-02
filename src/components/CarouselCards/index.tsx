@@ -9,8 +9,21 @@ import begining from "./mocks/begining.jpg"
 import solo_leveling from "./mocks/solo_leveling.jpg"
 import vinland from "./mocks/vinland_saga.jpg"
 import  CarouselResponsive  from "react-multi-carousel";
+import { SearchBar } from "../SearchBar"
+import { MiniCard } from "../MiniCard"
+import { useRouter } from "next/navigation"
 
-export function CarouselCards(){
+interface ICarouselCardsProps{
+    cardRoute: "/popularMonth" | "/recentUploads"
+    titleWhite: string,
+    titleGolden: string,
+    stateArray? : Array<{}>,
+    allCards : boolean,
+}
+
+export function CarouselCards(props : ICarouselCardsProps){
+
+    const router = useRouter()
 
     const responsive = {
         desktop: {
@@ -42,31 +55,54 @@ export function CarouselCards(){
       };
       
     return (
-        <Flex as={"section"} width={"auto"} height={"100%"}>
-                <Flex paddingLeft={"1rem"} flexDirection={"column"} borderRadius={"4px"} borderBottomRadius={"0px"} bg={"greyScale.grey0"} width={"100%"} height={"auto"}>
-                        <Flex width={"100%"} height={"100%"}>
-                            <Box width={"100%"} height={"100%"}>
-                                <Flex marginBottom={"1rem"} marginTop={"1rem"} gap={"0.5rem"}>
-                                    <Text color={"greyScale.whiteFixed"} fontSize="titleSections" fontWeight={"titleSections"}>
-                                        Populars
+        <Flex as={"section"} width={"auto"} height={"auto"}>
+                <Flex paddingBottom={"1.5rem"} paddingLeft={"1.5rem"} flexDirection={"column"} bg={"greyScale.grey0"} width={"100%"} height={"auto"}>
+                    <Flex width={"100%"} height={"100%"}>
+                        <Box width={"100%"} height={"100%"}>
+                            <Flex justifyContent={"space-between"} marginBottom={"1rem"} marginTop={"1rem"}>
+                                <Flex alignItems={"center"} gap={"0.5rem"}>
+                                    <Text height={"max-content"} color={"greyScale.whiteFixed"} fontSize="titleSections" fontWeight={"titleSections"}>
+                                        {props.titleWhite}
                                     </Text>
-                                    <Text color={"brand.brand2"} fontSize="titleSections" fontWeight={"titleSections"}>
-                                        this month
+                                    <Text height={"max-content"}     color={"brand.brand2"} fontSize="titleSections" fontWeight={"titleSections"}>
+                                        {props.titleGolden}
                                     </Text>
                                 </Flex>
-                                <Flex className={style.carouselCards}>
-                                    <CarouselResponsive removeArrowOnDeviceType={["tabletSmall", "mobile","tablet"]} infinite={true} itemClass={style.item_slider} swipeable={true}    
-                                responsive={responsive}
-                                containerClass={style.carouselResponsive}>
-                                        <Card src={berserk}></Card>
-                                        <Card src={vagabond}></Card>   
-                                        <Card src={solo_leveling}></Card>
-                                        <Card src={vinland}></Card>    
-                                        <Card src={begining}></Card>      
-                                    </CarouselResponsive>
+                                {
+                                props.allCards ?
+                                <Box marginRight={"1rem"}>
+                                    <SearchBar></SearchBar>
+                                </Box>
+                                :
+                                <Flex onClick={()=> router.push(`/discover/${props.cardRoute}`)} as={"button"} marginRight={"1rem"}>
+                                    <Text _hover={{textDecorationLine : "underline",textDecorationColor : "brand.brand2"}} color={"greyScale.whiteFixed"} fontWeight={"bold"}>See more</Text>
                                 </Flex>
-                            </Box>
-                        </Flex>
+                                }
+                            </Flex>
+                            <Flex className={style.carouselCards}>
+                                {
+                                props.allCards ? 
+                                <Flex gap={"1rem"} paddingRight={"1rem"} width={"100%"} flexDirection={"column"}>
+                                    <MiniCard src={berserk}></MiniCard> 
+                                    <MiniCard src={vagabond}></MiniCard>   
+                                    <MiniCard src={solo_leveling}></MiniCard>
+                                    <MiniCard src={vinland}></MiniCard>    
+                                    <MiniCard src={begining}></MiniCard>     
+                                </Flex>
+                                :
+                                <CarouselResponsive removeArrowOnDeviceType={["tabletSmall", "mobile","tablet"]} infinite={true} itemClass={style.item_slider} swipeable={true}    
+                            responsive={responsive}
+                            containerClass={style.carouselResponsive}>
+                                    <Card src={berserk}></Card>
+                                    <Card src={vagabond}></Card>   
+                                    <Card src={solo_leveling}></Card>
+                                    <Card src={vinland}></Card>    
+                                    <Card src={begining}></Card>      
+                                </CarouselResponsive>
+                                }
+                            </Flex>
+                        </Box>
+                    </Flex>
                 </Flex>
         </Flex>
     )

@@ -1,7 +1,7 @@
 "use client"
 import { AsideContext } from "@/contexts/aside.context";
-import { Flex,Text } from "@chakra-ui/react";
-import { usePathname } from "next/navigation";
+import { Box, Flex,Text } from "@chakra-ui/react";
+import { usePathname, useRouter } from "next/navigation";
 import { useContext, useEffect } from "react";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { CgProfile, CgUserList } from "react-icons/cg";
@@ -9,15 +9,24 @@ import { FaCompass, FaDonate } from "react-icons/fa";
 import { IoMdNotifications, IoMdSettings } from "react-icons/io";
 import style from "./style.module.css"
 
+interface IAsideProps{
+  height? : string
+}
 
-export function Aside(){
+export function Aside(props : IAsideProps){
 
+    const router = useRouter()
     const {setItemsStyle,styleItems} = useContext(AsideContext)
     const pathName = usePathname()
 
     useEffect(()=>{
       for(const key in styleItems){
-        if(key === pathName){
+        if(styleItems[key] && key != pathName){
+          setItemsStyle((old)=>{
+            return {...old, [key] : ""}
+          })
+        }
+        if(pathName.includes(key)){
           setItemsStyle((old)=> {
            return {...old,[key] : style.sidebar_item}
           })
@@ -26,13 +35,14 @@ export function Aside(){
     },[pathName])
 
     return (
+      <Box height={props.height ?? "auto"} className={style.aside}>
         <Flex paddingLeft={{tabletLarge : "1.9375rem",default : "0.5rem"}} paddingRight={"0.5rem"}  paddingTop={`6rem`}>
           <Flex width={"100%"} flexDirection={`column`} gap={"2.5rem"}>
               <Flex width={"100%"} flexDirection={`column`} gap={"1rem"}>
                 <Text letterSpacing={`1px`} color={"greyScale.grey10"} fontWeight={`menuBar.text`} fontSize={`menuBar.text`}>
                     Menu -
                 </Text>
-                <Flex className={`${styleItems["/home"]} ${style.item}`} alignItems={`center`} gap={`1rem`}>
+                <Flex onClick={()=> router.push("/home")} className={`${styleItems["/home"]} ${style.item}`} alignItems={`center`} gap={`1rem`}>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                     雪
                   </Text>
@@ -40,7 +50,7 @@ export function Aside(){
                     Home
                   </Text>
                 </Flex>
-                <Flex className={`${styleItems["/discover"]} ${style.item}`}  alignItems={`center`} gap={`1rem`}>
+                <Flex onClick={()=> router.push("/discover")} className={`${styleItems["/discover"]} ${style.item}`}  alignItems={`center`} gap={`1rem`}>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                     <FaCompass></FaCompass>
                   </Text>
@@ -48,7 +58,7 @@ export function Aside(){
                     Discover comics
                   </Text>
                 </Flex>
-                <Flex className={`${styleItems["/authors"]} ${style.item}`}  alignItems={`center`} gap={`1rem`}>
+                <Flex onClick={()=> router.push("/authors")} className={`${styleItems["/authors"]} ${style.item}`}  alignItems={`center`} gap={`1rem`}>
                     <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                       <BsFillPeopleFill></BsFillPeopleFill>
                     </Text>
@@ -56,7 +66,7 @@ export function Aside(){
                       Authors
                     </Text>
                 </Flex>
-                <Flex className={`${styleItems["/notifications"]} ${style.item}`}  alignItems={`center`} gap={`1rem`}>
+                <Flex onClick={()=> router.push("/notifications")} className={`${styleItems["/notifications"]} ${style.item}`}  alignItems={`center`} gap={`1rem`}>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                     <IoMdNotifications></IoMdNotifications>
                   </Text>
@@ -69,7 +79,7 @@ export function Aside(){
                 <Text letterSpacing={`1px`} color={"greyScale.grey10"} fontWeight={`menuBar.text`} fontSize={`menuBar.text`}>
                     General -
                 </Text>
-                <Flex className={`${styleItems["/profile"]} ${style.item}`} alignItems={`center`} gap={`1rem`}>
+                <Flex onClick={()=> router.push("/profile")} className={`${styleItems["/profile"]} ${style.item}`} alignItems={`center`} gap={`1rem`}>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                     <CgProfile></CgProfile>
                   </Text>
@@ -77,7 +87,7 @@ export function Aside(){
                     Profile
                 </Text>
                 </Flex>
-                <Flex className={`${styleItems["/mylist"]} ${style.item}`} alignItems={`center`} gap={`1rem`}>
+                <Flex onClick={()=> router.push("/mylist")} className={`${styleItems["/mylist"]} ${style.item}`} alignItems={`center`} gap={`1rem`}>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                     <CgUserList></CgUserList>
                   </Text>
@@ -85,7 +95,7 @@ export function Aside(){
                     My List
                 </Text>
                 </Flex>
-                <Flex className={`${styleItems["/settings"]} ${style.item}`} alignItems={`center`} gap={`1rem`}>
+                <Flex onClick={()=> router.push("/settings")} className={`${styleItems["/settings"]} ${style.item}`} alignItems={`center`} gap={`1rem`}>
                     <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                       <IoMdSettings></IoMdSettings>
                     </Text>
@@ -93,7 +103,7 @@ export function Aside(){
                       Settings
                     </Text>
                 </Flex>
-                <Flex className={`${styleItems["/donate"]} ${style.item}`} alignItems={`center`} gap={`1rem`}>
+                <Flex onClick={()=> router.push("/donate")} className={`${styleItems["/donate"]} ${style.item}`} alignItems={`center`} gap={`1rem`}>
                   <Text margin={0} letterSpacing={`1px`} color={"greyScale.whiteFixed"} fontWeight={`menuBar.icon`} fontSize={`menuBar.icon`}>
                     <FaDonate></FaDonate>
                   </Text>
@@ -104,5 +114,6 @@ export function Aside(){
               </Flex>
             </Flex>
           </Flex>
+      </Box>
     )
 }

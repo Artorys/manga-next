@@ -1,0 +1,20 @@
+.container{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.main{
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+}
+@media (min-width: 480px) {
+
+    .main{
+        width: 70%;
+    }
+
+    .container{
+        display: flex;
+    }
+}

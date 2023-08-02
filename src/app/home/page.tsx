@@ -10,7 +10,7 @@ export default function HomePage(){
         <>
             <CarouselBanner></CarouselBanner>
             <Categories></Categories>
-            <CarouselCards></CarouselCards>
+            <CarouselCards cardRoute="/popularMonth" allCards={false} titleWhite="Popular" titleGolden="this month"></CarouselCards>
         </>
     )
 }

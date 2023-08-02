@@ -34,11 +34,11 @@ export default function RegisterPage(){
             <Button variant="submit" size="buttonSubmit" text="Register"></Button>
             <Button leftIcon={<FcGoogle size={"1rem"}></FcGoogle>} variant="googleSubmit" size="buttonSubmit" text="Sign in with google"></Button>
             <Flex mt={"1rem"} gap={"0.5rem"}>
-                <Text color={"greyScale.grey1"}>Already have an account?</Text>
-                <Text _hover={{cursor : "pointer"}} onClick={()=> router.push("/login")} color={"brand.brand4"}>Log in</Text>
+                <Text whiteSpace={"nowrap"} color={isLargerThanTabletSmall ? "greyScale.grey1" : "greyScale.whiteFixed"}>Already have an account?</Text>
+                <Text whiteSpace={"nowrap"} _hover={{cursor : "pointer"}} onClick={()=> router.push("/login")} color={"brand.brand4"}>Log in</Text>
             </Flex>
             <Flex gap={"0.5rem"} mt={"0.5rem"}>
-                <Text color={"greyScale.grey1"}>Go back To</Text>
+                <Text color={isLargerThanTabletSmall ? "greyScale.grey1" : "greyScale.whiteFixed"}>Go back To</Text>
                 <Text _hover={{cursor : "pointer"}} onClick={()=> router.push("/home")} color={"brand.brand4"}>home page</Text>
             </Flex>
         </Flex>

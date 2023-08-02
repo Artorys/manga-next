@@ -25,11 +25,22 @@ const buttonVariant: IButtonVariant = {
       height : "12px",
       padding: " 0.2rem",
     },
+    "miniCardButtonFlag" : {
+      width : "auto",
+      height : "1rem",
+      padding: "0.2rem",
+    },
     "carouselButtonChapter":
     {
       padding: " 0 0.25rem",
       width : "auto",
       height : "32px"
+    },
+    "cardButtonChapter":
+    {
+      padding: " 0 0.25rem",
+      width : "auto",
+      height : "1rem"
     },
     "categoriesButton":
     {
@@ -87,6 +98,13 @@ const buttonVariant: IButtonVariant = {
       backgroundColor: "#1B6FA8",
       color: "#FAFCFC",
     },
+    "miniCardButtonFlag":{
+      fontWeight : "500",
+      fontSize : "0.4375rem",
+      letterSpacing : '0.2rem',
+      backgroundColor: "#FAFCFC",
+      color : "#1F1F1F"
+    },
     "carouselButtonFlag":
     {
       fontWeight : "500",
@@ -103,6 +121,15 @@ const buttonVariant: IButtonVariant = {
       backgroundColor: "#FAFCFC",
       color : "#1F1F1F"
     },
+    "cardButtonChapter":
+    {
+      textAlign : "center",
+      fontWeight : "600",
+      fontSize : "0.4375rem",
+      letterSpacing : '0.2rem',
+      backgroundColor: "#FAFCFC",
+      color : "#1F1F1F"
+    },
     "categoriesButton" :{
       borderRadius : "5px",
       fontWeight : "600",
@@ -115,7 +142,7 @@ const buttonVariant: IButtonVariant = {
       fontWeight : "500",
       fontSize : "0.5rem",
       letterSpacing : '0.2rem',
-      backgroundColor: "#FAFCFC",
+      backgroundColor: "#FAFCFC", 
       color : "#1F1F1F"
     }
   },

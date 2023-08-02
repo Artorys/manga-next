@@ -15,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={`${lato.variable}`}>
       <body>
-          <Providers>
-            {children}
-          </Providers>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   )

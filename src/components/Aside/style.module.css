@@ -1,11 +1,21 @@
 .sidebar_item{
     position: relative;
     width: 98%;
-    border-radius: 5px;
-    height: auto;
+    border-radius: 5px; 
+    height: 100%;
     padding: 0.25rem 0.50rem;
     background-color: var(--chakra-colors-brand-brand2);
 }
 .item{
     cursor: pointer;
+}
+.aside{
+    display: none;
+    background-color: var(--chakra-colors-brand-brand4);
+}
+@media (min-width: 480px) {
+    .aside{
+        display: block;
+        width: 30%;
+    }
 }

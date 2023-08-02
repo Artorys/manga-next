@@ -28,11 +28,11 @@ export default function LoginPage(){
             <Button onClick={()=> router.push("/home")} variant="submit" size="buttonSubmit" text="Log in"></Button>
             <Button leftIcon={<FcGoogle size={"1rem"}></FcGoogle>} variant="googleSubmit" size="buttonSubmit" text="Log in with google"></Button>
             <Flex mt={"1rem"} gap={"0.5rem"}>
-                <Text color={"greyScale.grey1"}>Don’t have an account?</Text>
+                <Text color={isLargerThanTabletSmall ? "greyScale.grey1" : "greyScale.whiteFixed"}>Don’t have an account?</Text>
                 <Text _hover={{cursor : "pointer"}} onClick={()=> router.push("/register")} color={"brand.brand4"}>Sign up</Text>
             </Flex>
             <Flex gap={"0.5rem"} mt={"0.5rem"}>
-                <Text color={"greyScale.grey1"}>Go back To</Text>
+                <Text color={isLargerThanTabletSmall ? "greyScale.grey1" : "greyScale.whiteFixed"}>Go back To</Text>
                 <Text _hover={{cursor : "pointer"}} onClick={()=> router.push("/home")} color={"brand.brand4"}>home page</Text>
             </Flex>
         </Flex>
