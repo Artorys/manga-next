@@ -1,15 +1,15 @@
 "use client"
 
-import { Box, Divider, Flex, Input, InputGroup, InputLeftElement, InputRightElement, useMediaQuery } from "@chakra-ui/react";
+import { Box, Divider, Flex, Input, InputGroup, Center, InputLeftElement, InputRightElement, useMediaQuery } from "@chakra-ui/react";
 import {FcSearch} from "react-icons/fc"
-import style from "./style.module.css"
 import {AiFillFilter, AiOutlineAlignLeft, AiOutlineAppstore} from "react-icons/ai"
 import { LabelStyled } from "./style";
 import { Dispatch, SetStateAction, useState } from "react";
+import { FilterModal } from "../FilterModal";
 
 interface ISearchBarProps{
     forCards: boolean
-    setIsCardBoxed : Dispatch<SetStateAction<boolean>>
+    setIsCardBoxed? : Dispatch<SetStateAction<boolean>>
 }
 
 export function SearchBar(props : ISearchBarProps){
@@ -27,10 +27,8 @@ export function SearchBar(props : ISearchBarProps){
                      </InputLeftElement>
                      <Input variant={"filter"} placeholder="Search here"></Input>
                      <InputRightElement width={"auto"}>
-                         <Divider borderTopColor={"transparent"} borderBottomColor={"transparent"} borderColor={"greyScale.grey0"} borderStyle={"dashed"} orientation="vertical"></Divider>
-                         <Box _hover={{cursor : "pointer"}} marginX={"0.8rem"}>
-                             <AiFillFilter className={style.icon} fill="#1B6FA8"></AiFillFilter>
-                         </Box>
+                         <Divider height={"98%"} borderTopColor={"transparent"} borderBottomColor={"transparent"} borderColor={"greyScale.grey0"} borderStyle={"dashed"} orientation="vertical"></Divider>
+                         <FilterModal margin="0rem 0.6rem 0rem 0.4rem"></FilterModal>
                      </InputRightElement>
                  </InputGroup>   
              </Box> : 
@@ -39,10 +37,10 @@ export function SearchBar(props : ISearchBarProps){
                     <input onClick={()=> setIsClosed(false)} onBlur={()=> setIsClosed(true)} id="search" type="text" placeholder="Search" />
                     {!isClosed ? 
                     <InputRightElement>
-                        <Divider borderTopColor={"transparent"} borderBottomColor={"transparent"} borderColor={"greyScale.grey0"} borderStyle={"dashed"} orientation="vertical"></Divider>
-                        <Flex justifyContent={"center"} alignItems={"center"} width={"100%"} height={"100%"} _hover={{cursor : "pointer"}} >
-                            <AiFillFilter className={`${style.iconCard} ${style.icon}`} fill="#1B6FA8"></AiFillFilter>
-                        </Flex>
+                        <Center height={"30px"}>
+                            <Divider height={"100%"} borderTopColor={"transparent"} borderBottomColor={"transparent"} borderColor={"greyScale.grey0"} borderStyle={"dashed"} orientation="vertical"></Divider>
+                        </Center>   
+                        <FilterModal margin="0rem 0rem 0.4rem 0.6rem"></FilterModal>
                     </InputRightElement>
                     : <></>
                     }       

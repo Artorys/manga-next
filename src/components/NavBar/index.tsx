@@ -21,7 +21,7 @@ export default function Navbar(){
             </Box>
             <Flex as= {"nav"} gap={"1.25rem"}>
                 <Flex alignItems={"center"} as={"ul"} gap={"1.25rem"}>
-                    <SearchBar margin={false}></SearchBar>
+                    <SearchBar forCards={false} ></SearchBar>
                     {
                         isLargerThan480 ? 
                         <>

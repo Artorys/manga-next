@@ -54,6 +54,12 @@ const buttonVariant: IButtonVariant = {
       width : "100%",
       height : "32px"
     },
+    "modalCategories" : {
+      padding: "0.5rem 1.5rem",
+      width : "auto",
+      height : "auto",
+      minHeight : "34px"
+    }
   },
   variants: {
     "submit" : {
@@ -63,11 +69,8 @@ const buttonVariant: IButtonVariant = {
       color: "#FAFCFC",
       _hover : {
         transition : "0.5s",
-        border : "solid 4px #F4B333",
-        borderRadius : "5px",
-        borderTop : 0,
-        borderLeft : 0
-      }
+        boxShadow : "5px 5px 0px 0px #F4B333",
+      },
       
     },
     "googleSubmit" : {
@@ -77,13 +80,9 @@ const buttonVariant: IButtonVariant = {
       backgroundColor: "#FAFCFC",
       color: "#1F1F1F80",
       _hover : {
-        color: "#1F1F1F",
         transition : "0.5s",
-        border : "solid 4px #F4B333",
-        borderRadius : "5px",
-        borderTop : 0,
-        borderLeft : 0
-      }
+        boxShadow : "5px 5px 0px 0px #F4B333",
+      },
       
     },
     "login": {
@@ -144,7 +143,37 @@ const buttonVariant: IButtonVariant = {
       letterSpacing : '0.2rem',
       backgroundColor: "#FAFCFC", 
       color : "#1F1F1F"
-    }
+    },
+    "modalCategories" : {
+      border : "solid 1px #1F1F1F",
+      borderRadius : "5px",
+      fontWeight : "600",
+      fontSize : "0.6875rem",
+      letterSpacing : '0.8px',
+      backgroundColor: "#FAFCFC", 
+      color : "#1F1F1F",
+      _hover : {
+        transition : "0.5s",
+        boxShadow : "5px 5px 0px 0px #F4B333",
+      },
+    },
+      "modalCategoriesConfirm" : {
+        border : "solid 1px #1F1F1F",
+        borderRadius : "5px",
+        fontWeight : "500",
+        fontSize : "1rem",
+        letterSpacing : '0.8px',
+        backgroundColor: "#FAFCFC", 
+        color : "#1F1F1F",
+        _hover : {
+          transition : "0.5s",
+          boxShadow : "5px 5px 0px 0px #F4B333",
+        },
+    },
+    "modalCategoriesActive" : {
+        backgroundColor: "#1B6FA8", 
+        color : "#FAFCFC",
+      }
   },
 };
 export default buttonVariant

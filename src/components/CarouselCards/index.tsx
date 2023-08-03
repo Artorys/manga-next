@@ -58,7 +58,7 @@ export function CarouselCards(props : ICarouselCardsProps){
       };
       
     return (
-        <Flex as={"section"} width={"auto"} height={"auto"}>
+        <Flex as={"section"} width={"auto"} height={props.allCards ? "100%" : "auto"}>
                 <Flex paddingBottom={"1.5rem"} paddingLeft={"1.5rem"} flexDirection={"column"} bg={"greyScale.grey0"} width={"100%"} height={"auto"}>
                     <Flex width={"100%"} height={"100%"}>
                         <Box width={"100%"} height={"100%"}>
@@ -93,7 +93,17 @@ export function CarouselCards(props : ICarouselCardsProps){
                                     <Card src={vagabond}></Card>   
                                     <Card src={solo_leveling}></Card>
                                     <Card src={vinland}></Card>    
-                                    <Card src={begining}></Card>     
+                                    <Card src={begining}></Card>  
+                                    <Card src={berserk}></Card> 
+                                    <Card src={vagabond}></Card>   
+                                    <Card src={solo_leveling}></Card>
+                                    <Card src={vinland}></Card>    
+                                    <Card src={begining}></Card>    
+                                    <Card src={berserk}></Card> 
+                                    <Card src={vagabond}></Card>   
+                                    <Card src={solo_leveling}></Card>
+                                    <Card src={vinland}></Card>    
+                                    <Card src={begining}></Card>           
                                 </Flex> 
                                 :
                                 <Flex gap={"1rem"} paddingRight={"1rem"} width={"100%"} flexDirection={"column"}>
@@ -102,11 +112,21 @@ export function CarouselCards(props : ICarouselCardsProps){
                                     <MiniCard src={solo_leveling}></MiniCard>
                                     <MiniCard src={vinland}></MiniCard>    
                                     <MiniCard src={begining}></MiniCard>     
+                                    <MiniCard src={berserk}></MiniCard> 
+                                    <MiniCard src={vagabond}></MiniCard>   
+                                    <MiniCard src={solo_leveling}></MiniCard>
+                                    <MiniCard src={vinland}></MiniCard>    
+                                    <MiniCard src={begining}></MiniCard>    
+                                    <MiniCard src={berserk}></MiniCard> 
+                                    <MiniCard src={vagabond}></MiniCard>   
+                                    <MiniCard src={solo_leveling}></MiniCard>
+                                    <MiniCard src={vinland}></MiniCard>    
+                                    <MiniCard src={begining}></MiniCard>      
                                 </Flex>
                                 :
                                 <CarouselResponsive removeArrowOnDeviceType={["tabletSmall", "mobile","tablet"]} infinite={true} itemClass={style.item_slider} swipeable={true}    
                             responsive={responsive}
-                            containerClass={style.carouselResponsive}>
+                            containerClass={style.carouselResponsive} sliderClass={style.carouselSlider}>
                                     <Card src={berserk}></Card>
                                     <Card src={vagabond}></Card>   
                                     <Card src={solo_leveling}></Card>

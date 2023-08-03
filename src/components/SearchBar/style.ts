@@ -19,7 +19,7 @@ export const LabelStyled = styled.label<searchBarProps>`
     content: '';
     display: block;
     height: 2px;
-    width: 80%;
+    width: 78%;
     background-color: #F0AD4E;
     transition: all 1s ease 0.5s;
   }

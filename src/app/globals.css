@@ -48,3 +48,12 @@ table {
 html{
 	font-family: var(--font-lato);
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--chakra-colors-brand-brand4);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--chakra-colors-brand-brand4);
+}
