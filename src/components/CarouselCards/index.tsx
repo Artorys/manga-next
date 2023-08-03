@@ -12,6 +12,8 @@ import  CarouselResponsive  from "react-multi-carousel";
 import { SearchBar } from "../SearchBar"
 import { MiniCard } from "../MiniCard"
 import { useRouter } from "next/navigation"
+import { useState } from "react"
+import {AiOutlineAlignLeft, AiOutlineAppstore} from "react-icons/ai"
 
 interface ICarouselCardsProps{
     cardRoute: "/popularMonth" | "/recentUploads"
@@ -24,6 +26,7 @@ interface ICarouselCardsProps{
 export function CarouselCards(props : ICarouselCardsProps){
 
     const router = useRouter()
+    const [isCardBoxed,setIsCardBoxed] = useState(false)
 
     const responsive = {
         desktop: {
@@ -59,7 +62,7 @@ export function CarouselCards(props : ICarouselCardsProps){
                 <Flex paddingBottom={"1.5rem"} paddingLeft={"1.5rem"} flexDirection={"column"} bg={"greyScale.grey0"} width={"100%"} height={"auto"}>
                     <Flex width={"100%"} height={"100%"}>
                         <Box width={"100%"} height={"100%"}>
-                            <Flex justifyContent={"space-between"} marginBottom={"1rem"} marginTop={"1rem"}>
+                            <Flex flexFlow={"wrap"} justifyContent={"space-between"} marginBottom={"1rem"} marginTop={"1rem"}>
                                 <Flex alignItems={"center"} gap={"0.5rem"}>
                                     <Text height={"max-content"} color={"greyScale.whiteFixed"} fontSize="titleSections" fontWeight={"titleSections"}>
                                         {props.titleWhite}
@@ -70,10 +73,12 @@ export function CarouselCards(props : ICarouselCardsProps){
                                 </Flex>
                                 {
                                 props.allCards ?
-                                <Box marginRight={"1rem"}>
-                                    <SearchBar></SearchBar>
-                                </Box>
-                                :
+                                <Flex width={"100%"} marginRight={"1rem"}>
+                                    <Flex width={"100%"} justifyContent={"flex-end"} alignItems={"center"} gap={"0.5rem"} height={"auto"}>
+                                        <SearchBar setIsCardBoxed={setIsCardBoxed} forCards={true}></SearchBar>
+                                    </Flex>
+                                </Flex>
+                                :   
                                 <Flex onClick={()=> router.push(`/discover/${props.cardRoute}`)} as={"button"} marginRight={"1rem"}>
                                     <Text _hover={{textDecorationLine : "underline",textDecorationColor : "brand.brand2"}} color={"greyScale.whiteFixed"} fontWeight={"bold"}>See more</Text>
                                 </Flex>
@@ -82,6 +87,15 @@ export function CarouselCards(props : ICarouselCardsProps){
                             <Flex className={style.carouselCards}>
                                 {
                                 props.allCards ? 
+                                isCardBoxed ? 
+                                <Flex gap={"1rem"} paddingRight={"1rem"} width={"100%"} flexDirection={"row"} flexFlow={"wrap"}>
+                                    <Card src={berserk}></Card> 
+                                    <Card src={vagabond}></Card>   
+                                    <Card src={solo_leveling}></Card>
+                                    <Card src={vinland}></Card>    
+                                    <Card src={begining}></Card>     
+                                </Flex> 
+                                :
                                 <Flex gap={"1rem"} paddingRight={"1rem"} width={"100%"} flexDirection={"column"}>
                                     <MiniCard src={berserk}></MiniCard> 
                                     <MiniCard src={vagabond}></MiniCard>   
