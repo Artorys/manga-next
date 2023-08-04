@@ -186,6 +186,21 @@ const buttonVariant: IButtonVariant = {
         backgroundColor: "#1B6FA8", 
         color : "#FAFCFC",
       },
+    "mangaPrimary" : {
+      textAlign : "center",
+      border : "solid 1px #1F1F1F",
+      fontWeight : "700",
+      fontSize : "0.75rem",
+      letterSpacing : '0.8px',
+      backgroundColor: "#1B6FA8", 
+      color : "#FAFCFC",
+      wordWrap : "break-all",
+      whiteSpace : "normal",
+      _hover : {
+        backgroundColor: "#FAFCFC", 
+        color : "#1F1F1F",
+      }
+    },
     "manga" : {
       textAlign : "center",
       border : "solid 1px #1F1F1F",

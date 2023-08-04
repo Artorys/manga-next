@@ -8,7 +8,10 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { FilterModal } from "../FilterModal";
 
 interface ISearchBarProps{
-    forCards: boolean
+    placeholder?: string
+    chapters?: boolean
+    type?: string
+    forCards?: boolean
     setIsCardBoxed? : Dispatch<SetStateAction<boolean>>
 }
 
@@ -25,17 +28,19 @@ export function SearchBar(props : ISearchBarProps){
                      <InputLeftElement>
                          <FcSearch></FcSearch>
                      </InputLeftElement>
-                     <Input variant={"filter"} placeholder="Search here"></Input>
-                     <InputRightElement width={"auto"}>
-                         <Divider height={"98%"} borderTopColor={"transparent"} borderBottomColor={"transparent"} borderColor={"greyScale.grey0"} borderStyle={"dashed"} orientation="vertical"></Divider>
-                         <FilterModal margin="0rem 0.6rem 0rem 0.4rem"></FilterModal>
-                     </InputRightElement>
+                     <Input type={props.type ?? "text"} variant={"filter"} placeholder={props.placeholder ?? "Search here"}></Input>
+                    {!props.chapters ? 
+                    <InputRightElement width={"auto"}>
+                            <Divider height={"98%"} borderTopColor={"transparent"} borderBottomColor={"transparent"} borderColor={"greyScale.grey0"} borderStyle={"dashed"} orientation="vertical"></Divider>
+                            <FilterModal margin="0rem 0.6rem 0rem 0.4rem"></FilterModal>
+                    </InputRightElement>
+                    : <></>}
                  </InputGroup>   
              </Box> : 
              <LabelStyled style={{marginTop : props.forCards && !isClosed ? "1rem" : "0"}} isClosed={isClosed} htmlFor="search">
                 <InputGroup>
-                    <input onClick={()=> setIsClosed(false)} onBlur={()=> setIsClosed(true)} id="search" type="text" placeholder="Search" />
-                    {!isClosed ? 
+                    <input onClick={()=> setIsClosed(false)} onBlur={()=> setIsClosed(true)} id="search" type={props.type ?? "text"} placeholder="Search" />
+                    {!isClosed && !props.chapters ? 
                     <InputRightElement>
                         <Center height={"30px"}>
                             <Divider height={"100%"} borderTopColor={"transparent"} borderBottomColor={"transparent"} borderColor={"greyScale.grey0"} borderStyle={"dashed"} orientation="vertical"></Divider>

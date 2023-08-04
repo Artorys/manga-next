@@ -19,7 +19,7 @@ export interface IButtonVariant extends IVariant {
             _hover?: {
                 boxShadow?: string,
                 color?: string,
-                transition : string,
+                transition? : string,
                 backgroundColor?: string,
                 border? : string,
                 borderRadius? : string,
