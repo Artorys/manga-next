@@ -13,7 +13,9 @@ export interface IButtonVariant extends IVariant {
             fontSize? : string
             backgroundColor?: string
             color?: string
-            borderColor?: string
+            borderColor?: string,
+            wordWrap?: string,
+            whiteSpace?: string,
             _hover?: {
                 boxShadow?: string,
                 color?: string,

@@ -1,0 +1,15 @@
+.star_icon{
+  fill : var(--chakra-colors-brand-brand2)
+}
+.image{
+  margin-top: 1rem;
+  width: 100%;
+  height:100%;
+  background-size: cover;
+  border: solid 4px #F4B333;
+  border-top: 0;
+  border-left: 0;
+  border-radius: 5px;
+  filter: brightness(0.90);
+  -webkit-mask-image: -webkit-gradient(linear, right top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}

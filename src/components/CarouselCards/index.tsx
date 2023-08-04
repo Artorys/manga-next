@@ -16,9 +16,9 @@ import { useState } from "react"
 import {AiOutlineAlignLeft, AiOutlineAppstore} from "react-icons/ai"
 
 interface ICarouselCardsProps{
-    cardRoute: "/popularMonth" | "/recentUploads"
+    cardRoute?: "/popularMonth" | "/recentUploads"
     titleWhite: string,
-    titleGolden: string,
+    titleGolden? : string,
     stateArray? : Array<{}>,
     allCards : boolean,
 }
@@ -67,9 +67,13 @@ export function CarouselCards(props : ICarouselCardsProps){
                                     <Text height={"max-content"} color={"greyScale.whiteFixed"} fontSize="titleSections" fontWeight={"titleSections"}>
                                         {props.titleWhite}
                                     </Text>
+                                    {
+                                    props.titleGolden ? 
                                     <Text height={"max-content"}     color={"brand.brand2"} fontSize="titleSections" fontWeight={"titleSections"}>
                                         {props.titleGolden}
                                     </Text>
+                                    : <></>
+                                    }
                                 </Flex>
                                 {
                                 props.allCards ?
@@ -79,9 +83,11 @@ export function CarouselCards(props : ICarouselCardsProps){
                                     </Flex>
                                 </Flex>
                                 :   
+                                props.cardRoute ? 
                                 <Flex onClick={()=> router.push(`/discover/${props.cardRoute}`)} as={"button"} marginRight={"1rem"}>
                                     <Text _hover={{textDecorationLine : "underline",textDecorationColor : "brand.brand2"}} color={"greyScale.whiteFixed"} fontWeight={"bold"}>See more</Text>
                                 </Flex>
+                                : <></>
                                 }
                             </Flex>
                             <Flex className={style.carouselCards}>

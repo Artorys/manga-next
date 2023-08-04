@@ -59,6 +59,18 @@ const buttonVariant: IButtonVariant = {
       width : "auto",
       height : "auto",
       minHeight : "34px"
+    },
+    "mangaPrimary" : {
+      padding: "0.5rem 1.5rem",
+      width : "100%",
+      height : "auto",
+      minHeight : "34px"
+    },
+    "mangaSecondary" : {
+      padding: "0.2rem 1rem",
+      width : "100%",
+      height : "auto",
+      minHeight : "25px",
     }
   },
   variants: {
@@ -173,7 +185,27 @@ const buttonVariant: IButtonVariant = {
     "modalCategoriesActive" : {
         backgroundColor: "#1B6FA8", 
         color : "#FAFCFC",
-      }
+      },
+    "manga" : {
+      textAlign : "center",
+      border : "solid 1px #1F1F1F",
+      fontWeight : "500",
+      fontSize : "0.75rem",
+      letterSpacing : '0.8px',
+      backgroundColor: "#FAFCFC", 
+      color : "#1F1F1F",
+      wordWrap : "break-all",
+      whiteSpace : "normal"
+  },
+  "mangaInfo" : {
+    border : "solid 1px #1F1F1F",
+    borderRadius : "5px",
+    fontWeight : "500",
+    fontSize : "0.75rem",
+    letterSpacing : '0.8px',
+    backgroundColor: "#FAFCFC", 
+    color : "#1F1F1F",
+  }
   },
 };
 export default buttonVariant
